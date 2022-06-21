@@ -1,9 +1,9 @@
 package com.springdemo;
 
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Value;
 
-@Component("database")
 public class MsSqlCustomerDal implements ICustomerDal {
+	@Value("${database.connectionString}")
 	String connectionString;
 
 	public String getConnectionString() {
